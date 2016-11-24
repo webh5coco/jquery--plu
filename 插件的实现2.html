@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>面向对象实现2</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<div>sdfdsf</div>
+<div>sdfdsf</div>
+<div>sdfdsf</div>
+<div>sdfdsf</div>
+<div>sdfdsf</div>
+<div>sdfdsf</div>
+<div>sdfdsf</div>
+
+<script>
+    
+(function(jQuery){
+
+
+function Bat(ele,opt){
+    this.element=ele;
+    this.default={
+      'color':"yellow",
+      'fontSize':'12px',
+      'textDecoration':'none'
+    },
+
+
+
+    this.optt=$.extend({},this.default,opt);
+
+
+
+}
+
+
+Bat.prototype={
+   beat:function(){
+   return this.element.css({
+        'color':this.optt.color,
+        'fontSize':this.optt.fontSize,
+        'textDecoration':this.optt.textDecoration
+
+
+   });
+
+   }
+
+
+
+
+
+
+}
+
+
+
+
+
+$.fn.mypp=function(options){
+
+     var bb=new Bat(this,options);
+     return bb.beat();
+
+}
+
+
+
+
+
+
+
+
+})(jQuery)
+
+
+
+ $("div").mypp({
+      'color':"#08e",
+      'fontSize':"20px"
+
+
+ })
+
+
+
+</script>
+    
+</body>
+</html>

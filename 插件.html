@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+<div>ss</div>
+
+<script>   
+/*给jquery扩展方法*/ 
+
+$.extend({
+    coc:function(){
+
+        alert("ss");
+    }
+
+})
+
+$.coc();
+
+
+
+
+/*给jquery对象扩展方法*/ 
+
+/*jquery.fn==jquery.prototype*/
+$.fn.extend({
+   
+   changColor:function(){
+    var _this=$(this);
+    _this.css("color","red");
+      
+   }
+
+})
+
+$("div").changColor()
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>

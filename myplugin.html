@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>我的插件</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<a href="">dfdsfdsfdsf</a>
+<script>
+    $.fn.coco=function(optionss){
+
+      var guo=function(el,opt){
+       this.element=el;
+       this.default={
+        'color':"red",
+        'fontSize':'12px',
+        'textDecoration':"none"
+
+       },
+       this.options=$.extend({},this.default,opt)
+
+      }
+
+   guo.prototype={
+        changes:function(){
+        return this.element.css({
+           'color':this.options.color,
+           'fontSize':this.options.fontSize,
+           'textDecoration':this.options.textDecoration
+
+        })
+
+    }
+
+
+
+
+   }
+
+
+var gg=new guo(this,optionss);
+return gg.changes();
+
+
+    }
+
+$(function(){
+
+$("a").coco({
+   'color':"red",
+   'font-size':'32px'
+
+})
+
+
+
+})
+
+
+
+
+</script>
+
+    
+</body>
+</html>
